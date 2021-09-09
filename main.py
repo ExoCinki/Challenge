@@ -4,6 +4,7 @@ import requests
 url = "https://random-data-api.com/api/internet_stuff/random_internet_stuff"
 # Request get on Endpoint
 reponse = requests.get(url)
+# Check response status
 if(reponse.status_code == 200):
 
     # Storage reponse at resquest
@@ -25,4 +26,5 @@ if(reponse.status_code == 200):
 
     print("L'adresse email de l'utilisateur", username, "est", email,". Iel utilise le système d'exploitation ", useragent, ".")
 else:
+    # Display error with status
     print("Une erreur",reponse.status_code,"est survenue!")
