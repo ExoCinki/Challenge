@@ -1,8 +1,6 @@
 # Import library HTTP
 import requests
 from src import checkOsUser
-# TODO: Destructuring
-# from operator import attrgetter
 
 def infoUser(url):
     # check if .env endpoint ot empty
