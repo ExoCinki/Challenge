@@ -1,4 +1,6 @@
+# Import library HTTP
 import requests
+
 def infoUser(url):
     # check if .env endpoint ot empty
     if(url):
@@ -8,7 +10,7 @@ def infoUser(url):
         except requests.ConnectionError:
             print(f"La Connection a échouer changer de Endpoint ou Réessayer")
             exit()
-            
+
         # Check response status
         if(reponse.status_code == 200):
 

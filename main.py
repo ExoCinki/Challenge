@@ -1,7 +1,7 @@
-# Import library HTTP
-import checkInfoUser
 import os
 from dotenv import load_dotenv
+import checkInfoUser
+
 
 load_dotenv()
 # Url Endpoint
