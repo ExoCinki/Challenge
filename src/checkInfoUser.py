@@ -1,5 +1,8 @@
 # Import library HTTP
 import requests
+from src import checkOsUser
+# TODO: Destructuring
+# from operator import attrgetter
 
 def infoUser(url):
     # check if .env endpoint ot empty
@@ -18,25 +21,11 @@ def infoUser(url):
             contenu = reponse.json()
             # Split information in variables and verification
             try:
-                email = contenu["email"]
-                username = contenu["username"]
-                useragent = contenu["user_agent"]
+                email,username,useragent = contenu["email"],contenu["username"],contenu["user_agent"]
             except:
-                print(f"Une erreur est survenue ! Réessayez !")
-            # Search tag on user_agent and redefine user_agent in emoji
-            if ('Windows' in useragent):
-                useragent = "\U0001fa9f"
-            elif ('Android' in useragent and 'Linux' in useragent):
-                useragent = "\U0001f916"
-            elif ('Linux' in useragent):
-                useragent = "\U0001f427"
-            elif ('Macintosh' in useragent or 'Mac OS X' in useragent):
-                useragent = "\U0001f34e"
-            else:
-                useragent = "\U0001F910"
-
+                print(f"Une erreur est survenue ! Réessayez !")    
             # Information User
-            print(f"L'adresse email de l'utilisateur {username} est {email}. Iel utilise le système d'exploitation {useragent}.")
+            print(f"L'adresse email de l'utilisateur {username} est {email}. Iel utilise le système d'exploitation {checkOsUser.checkOs(useragent)}.")
         else:
             # Display error with status
             print(f"Une erreur {reponse.status_code} est survenue!")
