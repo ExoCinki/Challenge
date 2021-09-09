@@ -1,0 +1,5 @@
+.DS_Store
+**:Zone-identifier
+**/cache
+**/tmp
+**/__pycache__
