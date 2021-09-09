@@ -1,10 +1,10 @@
 import os
 from dotenv import load_dotenv
-import checkInfoUser
+import src.checkInfoUser
 
 
 load_dotenv()
 # Url Endpoint
 URL = os.getenv('URL_ENDPOINT')
 # Call function infoUser
-checkInfoUser.infoUser(URL)
+src.checkInfoUser.infoUser(URL)
