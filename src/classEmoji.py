@@ -1,4 +1,5 @@
 from enum import Enum
+# Token for Emoji
 class Emoji(Enum):
     
     WINDOWS = "\U0001fa9f"
