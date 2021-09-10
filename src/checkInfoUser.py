@@ -4,7 +4,7 @@ from src import checkOsUser
 
 def infoUser(url):
     # check if .env endpoint ot empty
-    if(url):
+    if(url and "http" in url):
         # Request get on Endpoint and check url response
         try:
             reponse = requests.get(url)
